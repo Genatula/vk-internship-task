@@ -26,8 +26,7 @@ public class EventController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @ResponseBody
-    public SuccessMessage createEvent(@RequestBody ClientEvent event, HttpServletRequest request) {
+    public SuccessMessage createEvent(HttpServletRequest request, @RequestBody ClientEvent event) {
         Boolean success = eventService.addEvent(event, request.getRemoteAddr(), new Date());
 
         return new SuccessMessage(success);
@@ -35,7 +34,6 @@ public class EventController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
     public List<CountMessage> getEvents(@RequestParam Optional<String> name,
                                         @RequestParam Optional<String> date,
                                         @RequestParam Optional<String> aggregate) {

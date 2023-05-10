@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface EventRepository extends PagingAndSortingRepository<Event, Long> {
-    boolean save(Event event);
+    void save(Event event);
     @Query("select new company.vk.genatulin.internshiptask.repositories.EventCount(e.name, count(e.name)) from Event e" +
             " where e.date = :date group by e.name")
     List<EventCount> getEventByDateAndGroupedByName(@Param("date") Date date);

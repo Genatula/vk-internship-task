@@ -43,7 +43,8 @@ public class EventServiceImpl implements EventService {
         eventToSave.setNumericIp(ipConvertor.convert(ip));
         eventToSave.setDate(date);
 
-        return eventRepository.save(eventToSave);
+        eventRepository.save(eventToSave);
+        return true;
     }
 
     @Override
