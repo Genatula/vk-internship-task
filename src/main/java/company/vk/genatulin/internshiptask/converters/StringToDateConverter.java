@@ -1,12 +1,14 @@
 package company.vk.genatulin.internshiptask.converters;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+@Service
 public class StringToDateConverter implements Converter<String, Date> {
     @Override
     public Date convert(String source) {

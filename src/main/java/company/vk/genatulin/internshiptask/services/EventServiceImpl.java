@@ -14,7 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import company.vk.genatulin.internshiptask.dto.ClientEvent;
 import company.vk.genatulin.internshiptask.entities.Event;
 import company.vk.genatulin.internshiptask.repositories.EventRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EventServiceImpl implements EventService {
 
     private final EventRepository eventRepository;

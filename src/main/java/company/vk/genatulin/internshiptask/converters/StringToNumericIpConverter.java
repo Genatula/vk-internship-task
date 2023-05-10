@@ -1,7 +1,10 @@
 package company.vk.genatulin.internshiptask.converters;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StringToNumericIpConverter implements Converter<String, Long> {
     @Override
     public Long convert(String source) {

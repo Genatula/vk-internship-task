@@ -1,7 +1,9 @@
 package company.vk.genatulin.internshiptask.converters;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NumericToStringIpConverter implements Converter<Long, String> {
     @Override
     public String convert(Long source) {
