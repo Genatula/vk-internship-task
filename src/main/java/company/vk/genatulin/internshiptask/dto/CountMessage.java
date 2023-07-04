@@ -1,5 +1,9 @@
 package company.vk.genatulin.internshiptask.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
+
 public class CountMessage {
     public String getValue() {
         return value;
@@ -17,7 +21,11 @@ public class CountMessage {
         this.total = total;
     }
 
+    @NotBlank
+    @NotBlank
+    @Size(max = 64)
     private String value;
+    @PositiveOrZero
     private Long total;
 
     public CountMessage(String value, Long total) {
